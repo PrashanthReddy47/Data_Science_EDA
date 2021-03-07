@@ -162,7 +162,7 @@ plt.xlabel("Total rooms")
 plt.ylabel("Total bedrooms")
 ```
 
--** Bar plot - Count Plot**
+- **Bar plot - Count Plot**
 
 ```python
 # Count the data points based on a certain categorical column
@@ -181,7 +181,7 @@ plt.title("Count of houses based on their proximity to ocean")
 plt.xlabel("Proximity to the ocean")
 plt.ylabel("Count of houses")
 ```
--** Histograms - Count Plot**
+- **Histograms - Count Plot**
 Histograms are an effective way to show *CONTINUOUS points* of data and see how they are distributed. we could see if most values are to the lower side, or to the higher side or evenly distributed. We want is to plot histograms and joint distributions of variables. 
 
 ```python
@@ -192,7 +192,7 @@ plt.xlabel("Median house value")
 plt.ylabel("Value")
 ```
 
--** Violin Plot**
+- **Violin Plot**
 Violin plots are quite similar to box plots and depict the **width** based on the density to reflect the data distribution.
 ```python
 plt.figure(figsize = (12, 8))
@@ -202,7 +202,7 @@ plt.xlabel("Ocean proximity")
 plt.ylabel("Median house value")
 ```
 
--**Joint Plot**
+- **Joint Plot**
 A joint plot is a combination of scatter plot along with the density plots (histograms) for both features we’re trying to plot. The seaborn’s joint plot allows us to even plot a linear regression all by itself using kind as reg. I defined the square dimensions using height as 8 and color as green.
 The green line depicts the linear regression based on the data points.
 
@@ -223,7 +223,7 @@ plt.xlabel("Ocean proximity")
 plt.ylabel("Median house value")
 ```
 
--**Swarmplots**
+- **Swarmplots**
 jitter can be used to randomly provide displacements along the horizontal axis, which is useful when there are large clusters of datapoints
 ```python
 p = sns.stripplot(data=df,
