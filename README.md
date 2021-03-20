@@ -211,3 +211,45 @@ sns.jointplot(x = "total_rooms", y = "total_bedrooms", data=dataset, kind="reg",
 plt.xlabel("Total rooms")
 plt.ylabel("Total bedrooms")
 ```
+- **Box Plot with Swarm Plots**
+The box plots present the information into separate quartiles as well as the median. When overlapped with swarm plot, the data points are spread across their location such that there is no overlapping at all.
+
+```python
+plt.figure(figsize = (12, 8))
+sns.boxplot(x = 'ocean_proximity', y = 'median_house_value', data = dataset)
+sns.swarmplot(x = 'ocean_proximity', y = 'median_house_value', data = dataset)
+plt.title("Box plots of house values based on ocean proximity")
+plt.xlabel("Ocean proximity")
+plt.ylabel("Median house value")
+```
+
+- **Swarmplots**
+jitter can be used to randomly provide displacements along the horizontal axis, which is useful when there are large clusters of datapoints
+```python
+p = sns.stripplot(data=df,
+                  x='player_name',
+                  y='SHOT_DIST',
+                  hue='SHOT_RESULT',
+                  order=sorted(players_to_use),
+                  jitter=0.25,
+                  dodge=True,
+                  palette=sns.husl_palette(2, l=0.5, s=.95))
+```
+Swarmplots look good when overlaid on top of another categorical plot, like boxplot.
+
+```python
+params = dict(data=df,
+              x='player_name',
+              y='SHOT_DIST',
+              hue='SHOT_RESULT',
+              #jitter=0.25,
+              order=sorted(players_to_use),
+              dodge=True)
+p = sns.stripplot(size=8,
+                  jitter=0.35,
+                  palette=['#91bfdb','#fc8d59'],
+                  edgecolor='black',
+                  linewidth=1,
+                  **params)
+p_box = sns.boxplot(palette=['#BBBBBB','#DDDDDD'],linewidth=6,**params)
+```
